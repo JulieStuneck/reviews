@@ -57,7 +57,18 @@ public class ReviewsControllerMockMvcTest {
 	@Test
 	public void shouldBeOkForOneReview() throws Exception {
 		mvc.perform(get("/show-single-review?id=1")).andExpect(status().isOk());
+	}
+	
+	@Test
+	public void shouldRouteToASingleReviewView() throws Exception {
+		mvc.perform(get("/show-single-review?id=1")).andExpect(view().name(is("reviewTemplate")));
+	}
+	
+	@Test
+	public void shouldPutASingleReviewIntoModel() throws Exception {
+		when(reviewsRepo.findOne(1L)).thenReturn(firstReview);
 		
+		mvc.perform(get("/show-single-review?id=1")).andExpect(model().attribute("reviewsModel", is(firstReview)));
 	}
 
 }

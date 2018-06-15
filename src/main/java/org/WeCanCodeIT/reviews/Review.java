@@ -2,15 +2,27 @@ package org.WeCanCodeIT.reviews;
 
 public class Review {
 
-	private long reviewId;
+	private long id;
+	private String bikeType;
+	private String description;
 
-	public Review(long reviewId, String string, String string2) {
-		this.reviewId = reviewId;
-
+	public Long getId() {
+		return id;
 	}
 
-	public Long getReviewId() {
-		return reviewId;
+	public String getBikeType() {
+		return bikeType;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public Review(long reviewId, String bikeType, String description) {
+		this.id = reviewId;
+		this.bikeType = bikeType;
+		this.description = description;
+
 	}
 
 }

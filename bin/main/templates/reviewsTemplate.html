@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-	<title>Reviews</title>
+	<title>Bike Reviews Home Page</title>
 </head>
 <body>
-	<h1>A List of Reviews</h1>
+	<header>
+		<h1>Welcome to My Page of Bike Reviews</h1>
+	</header>
 
-	<div th:each="review: ${reviewsModel}">
-		<li>
-		<a th:href="@{/review(id=${review.id})}" th:text="${review.bikeType}"></a>
-		</li>
+	<h2>Click on the links below for straight talk about several types of bikes.</h2>
+
+	<div th:each = "review: ${reviewsModel}">
+		<h3>
+		<a th:href ="@{/show-single-review(id=${review.id})}" th:text="${review.bikeType}"></a>
+		</h3>
 	</div>
+	
 
 </body>
 </html>

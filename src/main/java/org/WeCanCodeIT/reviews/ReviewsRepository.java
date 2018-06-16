@@ -13,9 +13,9 @@ public class ReviewsRepository {
 
 	public ReviewsRepository() {
 
-		Review road = new Review(1L, "road bike", "painful, but fast");
-		Review tandom = new Review(2L, "tandom", "great for a get-away");
-		Review tricycle = new Review(3L, "tricycle", "won't go far, but might be the best bike you'll ever have");
+		Review road = new Review(1L, "Road Bike", "Painful, but potentially very fast.", "/images/Road.jpeg");
+		Review tandom = new Review(2L, "Tandem", "Not great for getting anywhere, but makes for a fun afternoon.", "/images/Tandem.jpg");
+		Review tricycle = new Review(3L, "Tricycle", "Won't go far or fast, but might be the best bike you'll ever have.", "/images/Tric.jpg");
 
 		listOfReviews.put(road.getId(), road);
 		listOfReviews.put(tandom.getId(), tandom);
@@ -28,8 +28,8 @@ public class ReviewsRepository {
 			listOfReviews.put(anyReview.getId(), anyReview);
 	}
 
-	public Review findOne(long reviewId) {
-		return listOfReviews.get(reviewId);
+	public Review findOne(long id) {
+		return listOfReviews.get(id);
 	}
 
 	public Collection<Review> findAll() {

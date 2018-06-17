@@ -14,7 +14,8 @@ public class ReviewsRepository {
 	public ReviewsRepository() {
 
 		Review road = new Review(1L, "Road Bike", "Painful, but potentially very fast.", "/images/Road.jpeg");
-		Review tandom = new Review(2L, "Tandem", "Not great for getting anywhere, but makes for a fun afternoon.", "/images/Tandem.jpg");
+		Review tandom = new Review(2L, "Tandem", "Not great for getting anywhere, but makes for a fun afternoon.",
+				"/images/Tandem.jpg");
 		Review tricycle = new Review(3L, "Tricycle", "Won't go far or fast, but might be the best bike you'll ever have.", "/images/Tric.jpg");
 
 		listOfReviews.put(road.getId(), road);

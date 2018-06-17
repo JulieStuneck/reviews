@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-	<title>Specific Bike Review</title>
+<title>Specific Bike Review</title>
 </head>
 <body>
-	
-		<div th:each = "review: ${reviewsModel}">
-		 <h1 th:text = "${review.bikeType}"></h1>
-		<h2 th:text = "${review.description}"></h2> 
-		 <img th:src = "${review.image}"></img> 
-		 </div>
-		<h3><a href="http://localhost:8080/show-reviews">Return Home</a></h3>
-	
+
+<header>
+	<h1> Bike Review: </h1>
+</header>
+
+	<div th:each="review: ${reviewsModel}">
+		<h1 th:text="${review.bikeType}"></h1>
+		<h2 th:text="${review.description}"></h2>
+		<img th:src="${review.image}"></img>
+	</div>
+	<h3>
+		<a href="http://localhost:8080/show-reviews">Return Home</a>
+	</h3>
+
 
 </body>
-</html> 
+</html>
